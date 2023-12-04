@@ -1,6 +1,7 @@
 @use "../abstracts";
 
 html {
+    // HEADER
     --text-color: #1a162e;
     // --text-color: green;
     --icon-color: brightness(0) saturate(100%) invert(9%) sepia(9%)
@@ -15,6 +16,10 @@ html {
         --header-bg-color: #fff;
     }
 
+    // MENU
     --dropdown-bg-color: #fff;
     --dropdown-shadow: rgba(200, 200, 200, 0.4);
+    --top-menu-border-color: #d2d1d6;
+    --menu-text-color: #1a162e;
+    --menu-icon-color: #1a162e;
 }
