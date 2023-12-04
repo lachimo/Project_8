@@ -1,4 +1,5 @@
 html.dark {
+    // HEADER
     // --text-color: #1a162e;
     --text-color: #ffffff;
     --icon-color: brightness(0) saturate(100%) invert(100%) sepia(44%)
@@ -9,8 +10,12 @@ html.dark {
     --top-act-group-shadow: rgba(0, 0, 0, 0.2);
     --top-act-group-separate: #ededf6;
 
+    // MENU
     --dropdown-bg-color: #2f3441;
     --dropdown-shadow: rgba(23, 28, 40, 0.4);
     --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(8%)
         saturate(1437%) hue-rotate(186deg) brightness(93%) contrast(90%);
+    --top-menu-border-color: #171c28;
+    --menu-text-color: #b9babe;
+    --menu-icon-color: #f8f8fb;
 }
