@@ -6,9 +6,12 @@
     width: min(1240px, 100%);
 
     &__inner {
+        --inner-max-height: min(582px, 100vh - 158px);
+        --inner-padding: 30px;
+
         position: relative;
-        height: min(582px, 100vh - 158px);
-        padding: 30px;
+        // max-height: var(--inner-max-height);
+        padding: var(--inner-padding);
         border-radius: 20px;
         background: var(--dropdown-bg-color);
         box-shadow: 0px 40px 90px 20px var(--dropdown-shadow);
@@ -25,12 +28,15 @@
 }
 
 .top-menu {
-    height: 100%;
+    position: relative;
+    display: flex;
 
     &__main {
+        display: flex;
         width: 292px;
-        height: 100%;
+        max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
         border-right: 1px solid var(--top-menu-border-color);
+        overflow-y: auto;
     }
 }
 
@@ -40,6 +46,7 @@
 
     &__icon {
         position: relative;
+        flex-shrink: 0;
         width: 36px;
         height: 36px;
     }
@@ -47,7 +54,7 @@
     &__icon-1 {
         width: 30px;
         height: 30px;
-        object-fit: cover;
+        object-fit: fill;
     }
 
     &__icon-2 {
@@ -57,30 +64,50 @@
         width: 24px;
         height: 24px;
         object-fit: cover;
-        color: var(--menu-icon-color);
+        filter: var(--menu-icon-color);
     }
 
     &__heading {
         color: var(--menu-text-color);
         padding-top: 6px;
-        padding-bottom: 26px;
+        padding-bottom: 19px;
         font-size: 16px;
         font-weight: 500;
         line-height: 150%;
     }
 
+    &__item {
+        &:hover .sub-menu {
+            display: grid;
+        }
+    }
+
     &__link {
-        display: flex;
-        padding-bottom: 14px;
+        display: block;
+        padding: 7px 0;
         color: var(--menu-text-color);
         font-size: 14px;
         font-weight: 400;
         line-height: 142.857%;
-    }
 
-    &__item {
-        &:last-child a {
-            padding-bottom: 0;
+        &:active {
+            color: #0071dc;
+            font-weight: 500;
         }
+    }
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    column-gap: 30px;
+    inset: 0 0 0 322px;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: auto;
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
     }
 }
