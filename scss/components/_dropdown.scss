@@ -4,7 +4,7 @@
     position: absolute;
     left: 0;
     padding-top: 54px;
-    display: none;   
+    // display: none;
     width: min(1240px, 100%);
 
     &__inner {
@@ -31,12 +31,14 @@
 
 .top-menu {
     position: relative;
-    display: flex;
+    // display: flex;
+
+    --max-inner-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
 
     &__main {
         display: flex;
         width: 292px;
-        max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+        height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
     }
@@ -122,5 +124,13 @@
         display: flex;
         flex-direction: column;
         // row-gap: 30px;
+    }
+
+    &--not-main {
+        position: initial; //initial: về giá trị khởi tạo
+        display: grid;
+        inset: initial;
+        grid-template-columns: repeat(4, 1fr);
+        height: var(--max-inner-height);
     }
 }
